@@ -3,7 +3,6 @@ Modeule with scoring functions that take molecular CDDD embeddings (positions of
 """
 from scipy.spatial.distance import cdist
 from rdkit import Chem
-from mso.data import load_predict_model_from_pkl
 from functools import wraps
 import joblib
 import os
@@ -13,8 +12,6 @@ from tensorflow.keras.layers import Input, Dense, Dropout, BatchNormalization
 # from tensorflow.keras.layers import Multiply, Concatenate, Add
 from tensorflow.keras.models import Model
 
-bace_score_512 = load_predict_model_from_pkl('bace_classifier.pkl')
-egfr_score_512 = load_predict_model_from_pkl('egfr_classifier.pkl')
 _dir = os.path.dirname(__file__)
 
 logd_model = joblib.load(os.path.join(_dir, 'models/logD_xgb.pkl'))
