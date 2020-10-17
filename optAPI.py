@@ -186,7 +186,7 @@ if '__main__' == __name__:
         }
     )
 
-    opt.opt.run(10, 5)
+    opt.opt.run(3, 5)
 
     init_sol = opt.opt.init_solution
     best_sol = opt.opt.best_solutions
@@ -194,6 +194,6 @@ if '__main__' == __name__:
     print(init_sol)
     print(best_sol)
 
-    import pandas as pd
-    out = pd.concat((init_sol, best_sol))
-    out.to_csv('demo3.csv', index=False)
+    # import pandas as pd
+    # out = pd.concat((init_sol, best_sol))
+    # out.to_csv('demo3.csv', index=False)

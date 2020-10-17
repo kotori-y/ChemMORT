@@ -108,6 +108,8 @@ class BasePSOptimizer:
         new_df.fitness = [swarm.swarm_best_fitness for swarm in self.swarms]
         new_df.swarm = [i for i in range(len(self.swarms))]
         new_df.step = step
+        for name in self.func_names:
+            new_df[name] = [swarm.unscaled_scores[name][swarm.best_idx] for swarm in self.swarms]
         self.best_fitness_history = self.best_fitness_history.append(new_df, sort=False)
 
     def run(self, num_steps, num_track=10):

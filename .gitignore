@@ -122,3 +122,4 @@ demo.csv
 demo.mdb
 
 /cddd/data/default_model/*
+*.pkl
