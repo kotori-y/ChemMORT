@@ -128,11 +128,18 @@ class BasePSOptimizer:
             print("Step %d, max: %.3f, min: %.3f, mean: %.3f"
                   % (step, max_fitness, min_fitness, mean_fitness))
             
-            if step==0:
+            if step == 0:
                 self.init_solution = self.best_solutions
-                
+            
+            if mean_fitness == 1:
+                print("="*70)
+                print("EarlyStopping, mean_fitness_score hit 1")
+                print("="*70)
+                break
+
             for swarm in self.swarms:
                 self._next_step_and_evaluate(swarm)
+
         return self.swarms
 
     @classmethod
